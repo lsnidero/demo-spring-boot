@@ -1,6 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
-  name: SpringBoot3DemoV1
+  name: SpringBoot3DemoV2
 components:
   - name: tools
     container:
@@ -13,10 +13,14 @@ components:
         - name: MAVEN_OPTS
           value: "-Dmaven.wagon.http.ssl.insecure=true"
       endpoints:
-        - exposure: none
+        - exposure: public
           name: debug
           protocol: tcp
           targetPort: 5005
+        - exposure: public
+          name: debug-java
+          protocol: tcp
+          targetPort: 3000  
         - exposure: public
           name: app
           protocol: http
@@ -39,6 +43,6 @@ commands:
   - id: install-java-17
     exec: 
       component: tools
-      commandLine: 'curl -sk https://raw.githubusercontent.com/lsnidero/openshift-devspaces-spring-boot3/main/configure-java-17.sh | bash'
+      commandLine: 'source /home/user/.bashrc && sdk install java 17.0.6-tem'
       workingDir: ${PROJECTS_ROOT}
 
