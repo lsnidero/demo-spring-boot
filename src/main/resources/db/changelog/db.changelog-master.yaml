@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create DEMO
+      author: dev
+      changes:
+        - createTable:
+            tableName: DEMO
+            columns:
+              - column:
+                  name: id
+                  type: varchar(250)
+              - column:
+                  name: description
+                  type: varchar(250)
