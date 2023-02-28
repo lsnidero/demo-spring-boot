@@ -20,7 +20,15 @@ components:
         - exposure: public
           name: debug-java
           protocol: tcp
-          targetPort: 3000  
+          targetPort: 3000
+        - exposure: public
+          name: che-debug
+          protocol: tcp
+          targetPort: 3100
+        - exposure: public
+          name: machine-debug
+          protocol: tcp
+          targetPort: 3333
         - exposure: public
           name: app
           protocol: http
