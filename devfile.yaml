@@ -1,6 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
-  name: SpringBoot 3 v6
+  name: SpringBoot3Demo
 components:
   - name: tools
     container:
